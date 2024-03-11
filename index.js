@@ -7,16 +7,17 @@ const flavArray = flavors.split(',');
 const flavorObj = {}
 //iterate through each flavor in the array 
 for (let i=0; i<flavArray.length; i++) {
+  const curFlavor = flavArray[i];
   //find the current flavor in the array 
   //flavArray[i] gets the current flavor and uses it assign value to the object name corresponding to the current flavor in our loop.
-  flavorObj[flavArray[i]] = flavorObj[flavArray[i]];
+  flavorObj[curFlavor] = flavorObj[curFlavor];
   //check if we've seen the current flavor before (through trial and error and googling found that I had to check if we HAVEN't NOT seen it before)
-  if (flavorObj[flavArray[i]] != undefined) {
+  if (flavorObj[curFlavor] != undefined) {
     //if the flavor does, in fact, already exist, we have to add one to the count (or the value).
-    flavorObj[flavArray[i]] = flavorObj[flavArray[i]] + 1;
+    flavorObj[curFlavor] = flavorObj[curFlavor] + 1;
   } else {
     //if it doesn't already exist, we have to add it to the object and set the value to 1
-    flavorObj[flavArray[i]] = 1;
+    flavorObj[curFlavor] = 1;
   }
 }
 
